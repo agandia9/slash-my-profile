@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FileUploaderOptions, FileUploader, ParsedResponseHeaders } from 'ng2-file-upload';
 import { environment } from 'src/environments/environment';
@@ -26,7 +25,6 @@ export class ProfileImgComponent implements OnInit {
   
   constructor(
     private zone: NgZone,
-    private http: HttpClient,
     ) { 
       this.responses = [];
     }
@@ -81,7 +79,7 @@ export class ProfileImgComponent implements OnInit {
           
         }
         
-        getImage() {
+        public getImage() {
           if(this.responses.length) {
             return this.responses[this.responses.length - 1].data.url
           } else {
