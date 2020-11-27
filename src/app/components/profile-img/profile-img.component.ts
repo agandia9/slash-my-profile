@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, NgZone, OnInit } from '@angular/core';
 import { FileUploaderOptions, FileUploader, ParsedResponseHeaders } from 'ng2-file-upload';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-profile-img',
   templateUrl: './profile-img.component.html',
@@ -11,7 +11,7 @@ export class ProfileImgComponent implements OnInit {
   selectedFile: any;
   responses;
   uploaderOptions: FileUploaderOptions = {
-    url: `https://api.cloudinary.com/v1_1/dfmugdupi/upload`,
+    url: `https://api.cloudinary.com/v1_1/${environment.CLOUD_API_USER}/upload`,
     autoUpload: true,
     isHTML5: true,
     removeAfterUpload: true,
@@ -22,7 +22,7 @@ export class ProfileImgComponent implements OnInit {
       }
     ]
   };
-  public uploader:FileUploader = new FileUploader({url: `https://api.cloudinary.com/v1_1/dfmugdupi/upload`});
+  public uploader:FileUploader = new FileUploader({url: `https://api.cloudinary.com/v1_1/${environment.CLOUD_API_USER}/upload`});
   
   constructor(
     private zone: NgZone,

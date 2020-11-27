@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { InitPageComponent } from './pages/init-page/init-page.component';
 import { ProfileCardComponent } from './components/profile-card/profile-card.component';
@@ -33,9 +33,9 @@ import { ProfileImgComponent } from './components/profile-img/profile-img.compon
   imports: [
     HttpClientModule,
     FileUploadModule,
-    CloudinaryModule.forRoot(Cloudinary, { cloud_name: 'dfmugdupi', upload_preset: 'gqndrpzs'}),
+    CloudinaryModule.forRoot(Cloudinary, { cloud_name: environment.CLOUD_API_USER, upload_preset: environment.CLOUD_PRESET}),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCJCkIt_75DiZp1XlElvPUkO2ryK12V9cs'
+      apiKey: environment.GOOGLE_MAPS_API_KEY
     }),
     BrowserModule,
     NoopAnimationsModule,

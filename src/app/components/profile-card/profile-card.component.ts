@@ -1,8 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, NgZone, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-file-upload';
-import { ImagesUploadServiceService } from 'src/services/images-upload.service';
 
 @Component({
   selector: 'app-profile-card',
